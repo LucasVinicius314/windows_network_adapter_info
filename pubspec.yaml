@@ -1,11 +1,11 @@
 name: windows_network_adapter_info
-description: "A new Flutter plugin project."
+description: "A plugin to retrieve network adapter info on Windows."
 version: 0.0.1
-homepage:
+homepage: https://github.com/LucasVinicius314/windows_network_adapter_info
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
-  flutter: '>=3.3.0'
+  sdk: ">=3.2.3 <4.0.0"
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
