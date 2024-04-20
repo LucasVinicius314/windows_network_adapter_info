@@ -5,23 +5,25 @@ import 'package:windows_network_adapter_info/windows_network_adapter_info_method
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  MethodChannelWindowsNetworkAdapterInfo platform = MethodChannelWindowsNetworkAdapterInfo();
+  final platform = MethodChannelWindowsNetworkAdapterInfo();
   const MethodChannel channel = MethodChannel('windows_network_adapter_info');
 
   setUp(() {
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(
       channel,
       (MethodCall methodCall) async {
-        return '42';
+        return [];
       },
     );
   });
 
   tearDown(() {
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(channel, null);
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(channel, null);
   });
 
-  test('getPlatformVersion', () async {
-    expect(await platform.getPlatformVersion(), '42');
+  test('getInfo', () async {
+    expect(await platform.getInfo(), []);
   });
 }

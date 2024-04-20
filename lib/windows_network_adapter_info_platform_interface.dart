@@ -1,4 +1,5 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+import 'package:windows_network_adapter_info/model/windows_network_adapter_info_data.dart';
 
 import 'windows_network_adapter_info_method_channel.dart';
 
@@ -6,9 +7,10 @@ abstract class WindowsNetworkAdapterInfoPlatform extends PlatformInterface {
   /// Constructs a WindowsNetworkAdapterInfoPlatform.
   WindowsNetworkAdapterInfoPlatform() : super(token: _token);
 
-  static final Object _token = Object();
+  static final _token = Object();
 
-  static WindowsNetworkAdapterInfoPlatform _instance = MethodChannelWindowsNetworkAdapterInfo();
+  static WindowsNetworkAdapterInfoPlatform _instance =
+      MethodChannelWindowsNetworkAdapterInfo();
 
   /// The default instance of [WindowsNetworkAdapterInfoPlatform] to use.
   ///
@@ -23,7 +25,7 @@ abstract class WindowsNetworkAdapterInfoPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+  Future<List<WindowsNetworkAdapterInfoData>> getInfo() {
+    throw UnimplementedError('getInfo() has not been implemented.');
   }
 }
